@@ -10,12 +10,14 @@
 	*Bonus: Napravite novu listu koja sadrži samo vrijednosti koje su za 10% veće ili manje od aritmetičke sredine
 """
 
+import random
+
 def median(arr):
     l = len(arr)
-    med = (arr[l//2] + arr[l//2-1]) / 2
+    arr.sort()
     if l % 2:
-        med = arr[l//2]
-    return med
+        return arr[l//2]
+    return (arr[l//2] + arr[l//2-1]) / 2
 
 def mode(arr):
     dic = {}
@@ -24,8 +26,10 @@ def mode(arr):
             dic[elem] += 1
         else:
             dic[elem] = 1
-    mod = max(dic, key=dic.get)
-    return mod
+    if all(map(lambda x: x == 1, dic.values())):
+        return
+    else:
+        return list(filter(lambda x: dic[x] == max(dic.values()), dic.keys()))
 
 def average(arr):
     sum = 0
@@ -36,14 +40,12 @@ def average(arr):
     return sum / count
 
 a = int(input("Unesite broj: "))
-
-if a > 1001:
-    new_list = [i for i in range(1001)]
-elif a <= 0:
-    raise Exception("Invalid number. The number must be greater than 0")
-else:
-    new_list = [i for i in range(a)]
-    med = median(new_list)
-    mod = mode(new_list)
-    avg = average(new_list)
+new_list = [random.randint(0, 1001) for i in range(a)]
+mod = mode(new_list)
+if type(mod) == list and len(mod) == 1:
+    mod = mod[0]
+print(f"Početna lista: {new_list}")
+print(f"Medijan: {median(new_list)}")
+print(f"Mod: {mod}")
+print(f"Aritmetička sredina: {average(new_list)}")
 
