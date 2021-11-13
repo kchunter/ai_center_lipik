@@ -23,7 +23,8 @@ get_change(0.45, 0.34) -> [1, 0, 0, 0, 0, 0, 1, 0, 3]
 """
 import math
 
-def get_change(ukupni_novac, cijena_proizvoda):
+def get_change(ukupni_novac, cijena_proizvoda): #Ovdje mi također nije bio cilj riješiti na najoptimalniji način pa sam riješio 
+                                                #na način koji mi je prvi pao na pamet, bez pretraživanja boljih rješenja na internetu
 
     kovanice = ((500, '5kn'), (200, '2kn'), (100, '1kn'), (50, '50lp'), (20, '20lp'), (10, '10lp'), (5, '5lp'), (2, '2lp'), (1, '1lp'))
     if ukupni_novac < cijena_proizvoda:
