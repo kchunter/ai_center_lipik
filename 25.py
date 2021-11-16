@@ -32,3 +32,15 @@ json_string = '[{"name":"sir","price":35.14},{"name":"slanina","price":35.14},{"
 prije, poslije = sort_by_some_rules(json_string)
 print(f"Prije sortiranja: {prije}\n")
 print(f"Nakon sortiranja: {poslije}")
+
+# #Ipak dodano i drugo rješenje
+# def sort_by_some_rules_shorter(json_string):
+#     dzejson = json.loads(json_string)
+#     first_sort = sorted(dzejson, key=lambda x: x['name'], reverse=True)
+#     second_sort = sorted(first_sort, key=lambda x: x['price'])
+#     return dzejson, second_sort
+
+# json_string = '[{"name":"sir","price":35.14},{"name":"rajčica","price":9.99},{"name":"slanina","price":35.14}]'
+# prije, poslije = sort_by_some_rules_shorter(json_string)
+# print(f"Prije sortiranja: {prije}\n")
+# print(f"Nakon sortiranja: {poslije}")
