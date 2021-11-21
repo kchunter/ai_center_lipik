@@ -9,7 +9,7 @@
 
 """
 
-#Napravit ću samo pronalazak prostih brojeva i spremanje u tekstualnu datoteku
+#Napravit ću samo pronalazak prostih brojeva i spremanje u tekstualnu datoteku (ostalo su lagano)
 
 def je_li_prost(n):
 
